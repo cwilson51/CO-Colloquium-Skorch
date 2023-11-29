@@ -5,7 +5,6 @@ using skorch and dask for multi-GPU hyperparameter optimization.
 import argparse
 import time
 import os
-import pickle
 
 import numpy as np
 from sklearn.metrics import accuracy_score
@@ -95,10 +94,6 @@ def main(device, batch_size, lr, max_epochs):
     print(f'Grid search found model with validation score: {gs.best_score_}')
     print(f'with parameters: {gs.best_params_}')
     print(f'Test score: {score} after {max_epochs} in {time_skorch}s.')
-
-    print('Saving GridSearchCV')
-    with open('/scratch/c7wilson/skorch_gs.pkl', 'wb') as file:
-        pickle.dump(gs, file)
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="skorch CIFAR10 benchmark")
