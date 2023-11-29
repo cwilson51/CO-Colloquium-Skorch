@@ -21,6 +21,8 @@ jupyter nbclassic
 
 ## Running the Multi-GPU `GridSearchCV`
 
+You will need to pre-download the CIFAR-10 dataset if running on the clusters.
+
 The job submission script is found in `cifar10_resnet_gs_parallel.sh`
 
 Copy the jobscripts and add your account info `#SBATCH --account=def-somuser` and other options you might want. You'll also need to set up the virtual environment and replace the path in the script.
